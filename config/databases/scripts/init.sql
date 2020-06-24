@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS portal_noticias;
+
+USE portal_noticias;
+CREATE TABLE IF NOT EXISTS tb_noticias(
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    news text,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
+
+GRANT ALL PRIVILEGES ON portal_noticias.* TO 'kaliary' IDENTIFIED BY '123456';
+FLUSH PRIVILEGES;
