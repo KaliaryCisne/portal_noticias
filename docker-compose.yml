@@ -9,18 +9,7 @@ services:
     - 3306:3306
     command: --init-file /data/application/init.sql
     volumes:
-    - ./config/databases/mysql:/var/lib/mysql
+    - ./bkp/mysql:/var/lib/mysql
     - ./config/databases/scripts/init.sql:/data/application/init.sql
     env_file:
-    - ./config/databases/envs/mysql.env
-
-  # myadmin:
-  #   image: phpmyadmin/phpmyadmin
-  #   container_name: bms-phpmyadmin
-  #   restart: unless-stopped
-  #   ports:
-  #   - 8090:80
-  #   env_file:
-  #   - ./envs/myadmin.env
-  #   depends_on:
-  #   - mysql
+    - .env
