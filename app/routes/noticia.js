@@ -2,9 +2,10 @@ module.exports = function(app) {
     app.get('/noticia', function(request, response) {
 
         var connection = app.config.databases.connections();
+        var noticiasModel = app.app.models.noticiasModel;
 
-        connection.query('select * from tb_noticias where id = 1', function(error, result) {
-            response.render('noticias/noticia', {noticia: result});
-        });
+        noticiasModel.getNoticia(connection, function(error, result) {
+            response.render("noticias/noticia", {noticia : result});
+        }); 
     });
 };
