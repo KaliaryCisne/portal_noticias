@@ -1,16 +1,10 @@
-var dBconnection = require('../../config/databases/connections');
-
 module.exports = function(app) {  
-
-    var connection = dBconnection();
 
     app.get('/noticias', function(request, response) {
 
-        connection.query('select * from tb_noticias', function(error, result) {
+        var connection = app.config.databases.connections();
 
-            if (error != null) {
-                response.render("errors/undefined", {error : error});
-            }
+        connection.query('select * from tb_noticias', function(error, result) {
 
             response.render("noticias/noticias", {news : result});
         });
