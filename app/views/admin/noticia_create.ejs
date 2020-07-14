@@ -45,47 +45,51 @@
 
 	    <div class="container">
 		
-			<div class="row">
-				<div class="col-md-12">
-					<div class="alert alert-danger">
-						<strong>Atenção!</strong>
-						<ul>
-							<li>Título é obrigatório</li>
-							<li>Resumo é obrigatório</li>
-						</ul>
+			<% if(validacao.length > 0) { %>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="alert alert-danger">
+							<strong>Warning!</strong>
+							<ul>
+								<% for(var i=0; i < validacao.length; i++) { %> 
+									<li><%= validacao[i].msg %></li>
+								<% } %>
+							</ul>
+						</div>
 					</div>
 				</div>
-			</div>
+			<% } %> 
+		
 	    	<div class="row">
 	    		<div class="col-md-12">
-	    			<form>
+	    			<form action="/noticias/save" method="POST">
 						<div class="form-group">
-							<label for="titulo">Título:</label>
-							<input type="text" class="form-control" id="titulo" name="titulo">
+							<label for="title">Title:</label>
+							<input type="text" class="form-control" id="title" name="title">
 						</div>
 
 						<div class="form-group">
-							<label for="pwd">Resumo:</label>
-							<input type="text" class="form-control" id="resumo" name="resumo">
+							<label for="pwd">Summary:</label>
+							<input type="text" class="form-control" id="resume" name="resume">
 						</div>
 						
 						<div class="form-group">
-							<label for="pwd">Autor:</label>
-							<input type="text" class="form-control" id="autor" name="autor">
+							<label for="pwd">Author:</label>
+							<input type="text" class="form-control" id="author" name="author">
 						</div>
 
 						<div class="form-group">
-							<label for="pwd">Data:</label>
-							<input type="date" class="form-control" id="data_noticia" name="data_noticia">
+							<label for="pwd">Date:</label>
+							<input type="date" class="form-control" id="news_date" name="news_date">
 						</div>
 
 						<div class="form-group">
-							<label for="pwd">Notícia:</label>
-							<textarea class="form-control" id="noticia" name="noticia"></textarea>
+							<label for="pwd">news:</label>
+							<textarea class="form-control" id="news" name="news"></textarea>
 						</div>
 
 
-						<button type="submit" class="btn btn-default">Cadastrar</button>
+						<button type="submit" class="btn btn-success">Save</button>
 						</form>
 		    	</div>
 	    	</div>
