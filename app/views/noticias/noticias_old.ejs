@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+	<html lang="pt-br">
+		<head>
+			<meta charset="utf-8"/>
+			<title>Notícias</title>
+		</head>
+	<body>
+
+		<h1>Notícias!</h1>
+
+		<table>
+			<tr>
+				<td>Title</td>
+			</tr>
+
+			<% news.forEach(function(notice) { %>
+				<tr>
+					<td> <%= notice.title %> </td>
+				</tr>
+			<% }); %>
+
+		</table>
+
+	</body>
+</html>
