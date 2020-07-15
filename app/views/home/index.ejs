@@ -48,7 +48,7 @@
 	    		<div class="col-md-8">
 	    			<div class="noticia_wrapper">
 		    			<span class="noticia_autor"><%= noticias[0].author %></span>
-		    			<a href="noticia.html" class="noticia_titulo"><%= noticias[0].title %></a>
+		    			<a href="noticia?id=<%= noticias[0].id %>" class="noticia_titulo"><%= noticias[0].title %></a>
 		    			<span class="noticia_data"><%= noticias[0].news_date %></span>
 		    			<br />
 		    			<p class="noticia_resumo">
@@ -60,7 +60,7 @@
 	    		<div class="col-md-4">
 	    			<div class="noticia_wrapper">
 		    			<span class="noticia_autor"><%= noticias[1].author %></span>
-		    			<a href="noticia.html" class="noticia_titulo"><%= noticias[1].title %></a>
+		    			<a href="noticia?id=<%= noticias[1].id %>" class="noticia_titulo"><%= noticias[1].title %></a>
 		    			<span class="noticia_data"><%= noticias[1].news_date %></span>
 		    			<br />
 		    			<p class="noticia_resumo">
@@ -76,7 +76,7 @@
 					<div class="col-md-4">
 						<div class="noticia_wrapper">
 							<span class="noticia_autor"><%= noticias[i].author %></span>
-							<a href="noticia.html" class="noticia_titulo"><%= noticias[i].title %></a>
+							<a href="noticia?id=<%= noticias[i].id %>" class="noticia_titulo"><%= noticias[i].title %></a>
 							<span class="noticia_data"><%= noticias[i].news_date %></span>
 							<br />
 							<p class="noticia_resumo">
@@ -89,7 +89,7 @@
 	    	</div>
 
 	    	<div class="row ver_mais">
-	    		<button type="button" class="btn btn-default"><a href="noticias.html">Ver todas as notícias</a></button>
+	    		<button type="button" class="btn btn-default"><a href="noticias">Ver todas as notícias</a></button>
 	    	</div>
 
 	    </div>

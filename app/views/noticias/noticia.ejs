@@ -47,14 +47,14 @@
 	    	<div class="row">
 	    		<div class="col-md-12">
 	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia/1" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o texto da notícia na íntegra.
-		    			</p>
-		    		</div>
+						<span class="noticia_autor"><%= news[0].author %></span>
+						<a href="noticia" class="noticia_titulo"><%= news[0].title %></a>
+						<span class="noticia_data"><%= news[0].news_date %></span>
+						<br />
+						<p class="noticia_resumo">
+							<%= news[0].resume %>
+						</p>
+					</div>
 		    	</div>
 	    	</div>
 	    </div>

@@ -42,91 +42,26 @@
 			</div>
 		</nav>
 
-
 	    <div class="container">
-	    	<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
-		    			</p>
-		    		</div>
-		    	</div>
-			</div>
-			<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
+			<% if(news.length > 0) { %> 
+				<% for(var i = 0; i < news.length; i++) { %>
 
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
-		    			</p>
-		    		</div>
-		    	</div>
-			</div>
-			<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="noticia_wrapper">
+								<span class="noticia_autor"><%= news[i].author %></span>
+								<a href="noticia?id=<%= news[i].id %>" class="noticia_titulo"><%= news[i].title %></a>
+								<span class="noticia_data"><%= news[i].news_date %></span>
+								<br />
+								<p class="noticia_resumo">
+									<%= news[i].resume %>
+								</p>
+							</div>
+						</div>
+					</div>
 
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
-		    			</p>
-		    		</div>
-		    	</div>
-	    	</div>
-
-	    	<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
-		    			</p>
-		    		</div>
-		    	</div>
-			</div>
-			<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
-
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
-		    			</p>
-		    		</div>
-		    	</div>
-			</div>
-			<div class="row">
-	    		<div class="col-md-12">
-	    			<div class="noticia_wrapper">
-		    			<span class="noticia_autor">Por Jorge</span>
-		    			<a href="noticia.html" class="noticia_titulo">Título da notícia</a>
-		    			<span class="noticia_data">07/09/2016</span>
-
-		    			<br />
-		    			<p class="noticia_resumo">
-		    				Aqui fica o resumo da notícia com um limite de 100 caracteres!
-		    			</p>
-		    		</div>
-		    	</div>
-	    	</div>
+				<% } %> 
+			<% } %> 
 			
 	    </div>
 	
