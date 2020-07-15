@@ -1,47 +1,101 @@
-<!DOCTYPE html>
-	<html lang="pt-br">
-		<head>
-			<meta charset="utf-8"/>
-			<title>Formulário de cadastro de Notícia</title>
-		</head>
+
+<!DOCTYPE HTML>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+
+		<title>Portal de notícias</title>
+		
+		<!-- JQuery -->
+		<script src="/js/jquery-2.2.1.js"></script>
+
+		<!-- bootstrap - link cdn -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	
+		<!-- incluindo css -->
+		<link href="/css/style.css" rel="stylesheet">
+
+		<!-- favicon -->
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+	</head>
+
 	<body>
 
-		<h1>Adicionar notícia</h1>
-		<br />
+		<nav class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					
+					<img src="/images/logo.png" />
+				</div>
 
-		<% if(locals.validacao) { %>
-			<ul>
-				<% for(var i = 0; i < validacao.length; i++)  { %>
-					<li>	
-						<%= validacao[i].msg %>
-					</li>
-				<% } %>
-			</ul>
-		<% } %>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.html">HOME</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-		<form action="/noticias/save" method="post">
-			<label>Title</label>
-			<input type="text" id="title" name="title" value="<%=noticia.title%>" placeholder="Título da Notícia" />
-			<br />
 
-			<label>Resume</label>
-			<input type="text" id="resume" name="resume" value="<%=noticia.resume%>" placeholder="Resumo da Notícia" />
-			<br />
+	    <div class="container">
+		
+			<% if(validacao.length > 0) { %>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="alert alert-danger">
+							<strong>Warning!</strong>
+							<ul>
+								<% for(var i=0; i < validacao.length; i++) { %> 
+									<li><%= validacao[i].msg %></li>
+								<% } %>
+							</ul>
+						</div>
+					</div>
+				</div>
+			<% } %> 
+		
+	    	<div class="row">
+	    		<div class="col-md-12">
+	    			<form action="/noticias/save" method="POST">
+						<div class="form-group">
+							<label for="title">Title:</label>
+							<input type="text" class="form-control" id="title" name="title">
+						</div>
 
-			<label>Author</label>
-			<input type="text" id="author" name="author" value="<%=noticia.author%>" placeholder="Autor da Notícia" />
-			<br />
+						<div class="form-group">
+							<label for="pwd">Summary:</label>
+							<input type="text" class="form-control" id="resume" name="resume">
+						</div>
+						
+						<div class="form-group">
+							<label for="pwd">Author:</label>
+							<input type="text" class="form-control" id="author" name="author">
+						</div>
 
-			<label>Date</label>
-			<input type="date" id="news_date" name="news_date" value="<%=noticia.news_date%>" placeholder="Data da Notícia" />
-			<br />
+						<div class="form-group">
+							<label for="pwd">Date:</label>
+							<input type="date" class="form-control" id="news_date" name="news_date">
+						</div>
 
-			<label>News</label>
-			<textarea id="noticia" name="news" rows="5" cols="30"><%=noticia.news%></textarea>
-			<br />
+						<div class="form-group">
+							<label for="pwd">news:</label>
+							<textarea class="form-control" id="news" name="news"></textarea>
+						</div>
 
-			<input type="submit" value="Enviar" />
-		</form>
 
+						<button type="submit" class="btn btn-success">Save</button>
+						</form>
+		    	</div>
+	    	</div>
+	    </div>
+	
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	
 	</body>
 </html>
