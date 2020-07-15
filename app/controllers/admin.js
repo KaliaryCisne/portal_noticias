@@ -2,7 +2,7 @@ const { compile } = require("ejs");
 
 module.exports.create_news = function(app, request, response) {
 
-    response.render('admin/noticia_create', {noticia : {}});
+    response.render('admin/noticia_create', {noticia : {}, validacao : {}});
 }
 
 module.exports.save_news = function(app, request, response) {
